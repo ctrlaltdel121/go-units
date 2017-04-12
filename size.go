@@ -73,6 +73,10 @@ func BytesSize(size float64) string {
 	return CustomSize("%.4g%s", size, 1024.0, binaryAbbrs)
 }
 
+func HumanSizeFromBytes(size float64) string {
+	return CustomSize("%.4g%s", size, 1024.0, decimapAbbrs)
+}
+
 // FromHumanSize returns an integer from a human-readable specification of a
 // size using SI standard (eg. "44kB", "17MB").
 func FromHumanSize(size string) (int64, error) {
